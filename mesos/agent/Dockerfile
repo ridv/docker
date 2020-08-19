@@ -1,4 +1,4 @@
-FROM aurorascheduler/mesos:1.7.2
+FROM aurorascheduler/mesos:1.8.1
 
 ### Install Aurora's default executor
 
@@ -10,7 +10,7 @@ RUN curl -Lko /tmp/aurora-executor.deb "https://dl.bintray.com/rdelvalle/aurora/
 RUN gpg --keyserver keyserver.ubuntu.com --recv-keys 91ACFC4110A6A9BB695D825CCC1B456F5653E182 && \
   gpg --verify /tmp/aurora-executor.deb.asc /tmp/aurora-executor.deb
 
-# Install Thermos
+# Install Thermos and Tools
 RUN dpkg -i /tmp/aurora-executor.deb
 
 # Add testing user, in this case vagrant for backwards compatibility
